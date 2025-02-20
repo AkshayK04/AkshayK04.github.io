@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax-js/3.1.0/parallax.min.js"></script>
+    
+
+    
+
     <style>
         /* Base Styles */
         * {
@@ -81,7 +89,39 @@
             margin-bottom: 2rem;
         }
 
-        /* Projects Grid */
+
+    
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffd700; /* Gold color on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .social-links {
+                gap: 1rem;
+            }
+            .social-links a {
+                font-size: 1.5rem;
+            }
+        }
+
+        #projects {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -99,6 +139,10 @@
             transition: transform 0.3s;
         }
 
+        .project-card {
+        transform-style: preserve-3d;
+        } 
+
         .project-card:hover {
             transform: translateY(-5px);
         }
@@ -114,6 +158,10 @@
         }
 
         /* Skills Section */
+        #skills {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+        }
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -138,6 +186,10 @@
         }
 
         /* Contact Form */
+        /*#contact {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+        } */
+
         .contact-form {
             width: 100%;
             max-width: 600px;
@@ -170,6 +222,23 @@
             background: #0056b3;
         }
 
+
+        /* Add z-index to ensure content stays above parallax bg */
+        .navbar, .projects-grid, .skill-item, .contact-form, .timeline {
+            position: relative;
+            z-index: 2;
+        }
+
+
+
+        /* Parallax Scroll Effect */
+        @media (prefers-reduced-motion: no-preference) {
+            .parallax-section {
+                transition: transform 0.5s ease-out;
+            }
+        }
+        
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-content h1 {
@@ -185,9 +254,267 @@
                 margin: 0.5rem 0;
             }
         }
+
+
+      
+
+        .bar-container {
+        height: 10px;
+        background: #eee;
+        border-radius: 5px;
+        overflow: hidden;
+        }
+    
+        .bar {
+        height: 100%;
+        width: 0;
+        background: #007bff;
+        transition: width 1.5s ease-in-out;
+        border-radius: 5px;
+        }
+
+
+        .valid {
+        border-color: #28a745 !important;
+        }
+    
+        .invalid {
+        border-color: #dc3545 !important;
+        }
+
+
+        #timeline {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+        }
+
+
+        .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        }
+  
+        .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: #007bff;
+        }
+    
+        .timeline-item {
+        background: white;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        width: 45%;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+    
+        .timeline-item:nth-child(odd) {
+        margin-left: 55%;
+        }
+    
+        .timeline-item:nth-child(even) {
+        margin-left: 0;
+        }
+        
+
+
+        /* Particle container setup */
+        /*#particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Ensure it's behind content */
+        /*} */
+
+        /* Make sure parent container has positioning */
+        /*#hero {
+            position: relative;
+            overflow: hidden;
+            height: 100vh; /* Essential for visibility */
+
+
+
+        <!-- Add this to your CSS >
+
+        /* Skills Section Improvements */
+        .skills-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .skill-category {
+            margin-bottom: 3rem;
+        }
+
+        .skill-category h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .skill-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #007bff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skill-icon {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            color: #007bff;
+        }
+
+        .skill-progress {
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #00a8ff);
+            width: 0;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+
+        .skill-progress-bar::after {
+            content: attr(data-progress);
+            position: absolute;
+            right: 5px;
+            top: -25px;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .skill-description {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Animation */
+        @keyframes progress {
+            from { width: 0; }
+            to { width: attr(data-progress); }
+        }
+
+
+        .data-viz-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .dataset-card {
+            background: white;
+            border-left: 4px solid var(--secondary-color);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .dataset-card:hover {
+            transform: translateX(10px);
+        }
+
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .tool-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .tool-item img {
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
+
+
+
+
+
+        :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --text-dark: #333;
+        --text-light: #fff;
+        }
+
+
+        .viz-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
     </style>
+
+    
 </head>
 <body>
+
+    <div class="parallax-container">
+
     <!-- Navbar -->
     <nav class="navbar">
         <ul class="nav-links">
@@ -196,63 +523,367 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
+ 
+
     </nav>
+
+    
+    
 
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
-            <h1>Hi, I'm Your Name</h1>
-            <p>Web Developer & UI Designer</p>
+            <h1>Hi, I'm Your Friend.</h1>
+            <p>Data Analyst</p>
             <button onclick="location.href='#contact'">Get in Touch</button>
+            
+
+        <!-- Add this inside the hero-content div, after the button -->
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:youremail@example.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        
+            <!-- Instagram -->
+            <a href="https://instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <!-- Medium -->
+            <a href="https://medium.com/@yourhandle" target="_blank" aria-label="Medium">
+                <i class="fab fa-medium"></i>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <!-- Stack Overflow -->
+            <a href="https://stackoverflow.com/users/yourid" target="_blank" aria-label="Stack Overflow">
+                <i class="fab fa-stack-overflow"></i>
+            </a>
         </div>
+
+        <!-- Add this inside your hero section -->
+        <!--<div class="parallax-layer" data-depth="0.2"></div> -->
+
     </section>
 
+    <section id="timeline">
+        <h2>Professional Journey</h2>
+        <div class="timeline">
+          <!-- timeline items here -->
+
+
+        <div class="timeline">
+            <div class="timeline-item" data-aos="zoom-in">
+              <h3> March 2024 - Present</h3>
+              <p>Analyst @ Globallogic India</p>
+            </div>
+            <!-- Add more items -->
+    
+        <div class="timeline-item" data-aos="zoom-in">
+                <h3> Oct 2022 - March 2024</h3>
+                <p>Associate Analyst @ Globallogic India</p>
+
+                <ul class="role-details">
+                    <li>Performed ETL on 1M+ row datasets</li>
+                    <li>Created 15+ Tableau dashboards</li>
+                    <li>Reduced reporting time by 40% through automation</li>
+                  </ul>
+
+            </div>
+    
+          </div>
+    
+
+        </div>
+      </section>
+
+
+
+
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" data-aos="fade-up">
         <h2>My Projects</h2>
         <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="project1.jpg" alt="Project 1" class="project-image">
+
+            <!-- Example usage in HTML -->
+                <!-- Your content -->
+            
+            
+            <!-- Project 1 
+             <div class="project-card"> -->
+                <!-- Update project card HTML -->
+            <div class="project-card" data-tilt data-tilt-scale="1.05">
+
+                <!img src="project1.jpg" alt="Project 1" class="project-image">
                 <div class="project-info">
-                    <h3>E-commerce Platform</h3>
-                    <p>React-based shopping platform with Node.js backend</p>
+                    <h3>Detecting Fraud Transactions</h3>
+
+                    <p>Google Collab, Python ,Seaborn, Matplotlib, NumPy, Pandas</p>
+
+
+                    <p>A huge dataset of 63,62,620 transactions. This dataset
+                        includes missing values, outliers.Used Python with libraries like
+                        Seaborn, Matplotlib, NumPy , Pandas, Decision Trees for this
+                        project.</p>
+                    <p>Analyzed global infection patterns using Python and Tableau</p>
+                        <ul>
+                            <li>Cleaned dataset of 2M+ records</li>
+                            <li>Identified key infection trends</li>
+                            <li>Created interactive dashboard</li>
+                            <li>Cleaned dataset of 2M+ records</li>
+                            <li>Identified key infection trends</li>
+                            <li>Created interactive dashboard</li>
+                            <li>Cleaned dataset of 2M+ records</li>
+                        </ul>
+                    
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card">
-                <img src="project2.jpg" alt="Project 2" class="project-image">
+            <div class="project-card" data-tilt data-tilt-scale="1.05">
+                <!img src="project2.jpg" alt="Project 2" class="project-image">
                 <div class="project-info">
-                    <h3>Task Management App</h3>
-                    <p>Real-time task manager using Firebase</p>
+                    <h3>Image Synthesis</h3>
+
+                    <p>Python ,Opencv, caffe</p>
+                    <div class="project-description">
+
+                    <p>A project in which we can recognize image and detect gender
+                        classication, age detection, emotion detection and output is in
+                        speech. Used Python with libraries like HaarClassier , opencv,
+                        caffe.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-tilt data-tilt-scale="1.05">
+                <!img src="project3.jpg" alt="Project 3" class="project-image">
+                <div class="project-info">
+                    <h3> Credit Card Fraud Detection</h3>                
+
+                    <p>Python, Seaborn, Matplotlib, NumPy, Pandas, Scikit Learn</p>
+
+                    <div class="project-description">
+                        <p>A Beginner project for Data Science to understand the method
+                        and concepts.Used Python with libraries like Seaborn
+                        ,Matplotlib ,Numpy ,Pandas ,Scikit-Learn & algorithms like
+                        Random Forest Method , Credit Card Dataset for this project.</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-value">89%</span>
+                  <span class="metric-label">Accuracy</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-value">2M+</span>
+                  <span class="metric-label">Records Processed</span>
+                </div>
+              </div>
+            
+              <div class="viz-container">
+                <canvas id="covidTrendChart"></canvas>
+              </div>
+            
+              <div class="dataset-stats">
+                <span><i class="fas fa-database"></i> 1.2GB</span>
+                <span><i class="fas fa-columns"></i> 42 Features</span>
+                <span><i class="fas fa-percent"></i> 0.2% Missing</span>
+              </div>
+
         </div>
+        </div>
+
+
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
+
+    <!-- Skills Section
+
+    /*<section id="skills">
         <h2>Technical Skills</h2>
         <div class="skills-container">
             <div class="skill-item">
                 <i class="fab fa-html5"></i>
-                <span>HTML5</span>
+                <span>Python</span>
             </div>
             <div class="skill-item">
                 <i class="fab fa-css3-alt"></i>
-                <span>CSS3</span>
+                <span>Tableau</span>
             </div>
             <div class="skill-item">
                 <i class="fab fa-js"></i>
-                <span>JavaScript</span>
+                <span>Power BI</span>
             </div>
             <div class="skill-item">
                 <i class="fab fa-react"></i>
-                <span>React</span>
+                <span>MySQL</span>
             </div>
         </div>
+
+
+    </section> 
+
+    -->
+
+
+
+
+    <!-- Updated Skills Section HTML -->
+    <section id="skills">
+    <div class="skills-section">
+        <h2>Technical Skills</h2>
+        
+        <!-- Frontend Skills -->
+        <div class="skill-category">
+            <h3>Data Analysis</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fab fa-python skill-icon"></i>
+                        <h4>Python </h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="90%"></div>
+                    </div>
+                    <p class="skill-description">
+                        Python can perform all kinds of operations, from data preprocessing, visualization, and statistical analysis, to the deployment of machine learning and deep learning models.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fab fa-react skill-icon"></i>
+                        <h4>Pandas</h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="95%"></div>
+                    </div>
+                    <p class="skill-description">
+                        Pandas used for performing all kinds of manipulation of databases, also called DataFrames.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Data Visualization</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fab fa-react skill-icon"></i>
+                        <h4>Tableau </h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="90%"></div>
+                    </div>
+                    <p class="skill-description">
+                        Tableau is a visual analytics platform that helps people and organizations use data to solve problems. It's a business intelligence (BI) tool that allows users to explore, manage, and share data.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fab fa-js skill-icon"></i>
+                        <h4>Power BI</h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="95%"></div>
+                    </div>
+                    <p class="skill-description">
+                        Microsoft Power BI is a cloud-based business analytics tool that helps users visualize and analyze data from various sources. It's used to create interactive dashboards and reports to help users make data-driven decisions.
+                    </p>
+                </div>
+
+
+          </div>
+
+
+
+        <!-- Backend Skills -->
+        <div class="skill-category">
+            <h3>Databases</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fas fa-server skill-icon"></i>
+                        <h4>MySQL</h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="85%"></div>
+                    </div>
+                    <p class="skill-description">
+                        MySQL is a relational database management system (RDBMS) that can be used for data analytics.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fas fa-database skill-icon"></i>
+                        <h4>Database Systems</h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="80%"></div>
+                    </div>
+                    <p class="skill-description">
+                        Experience with PostgreSQL, MySQL, and MongoDB Atlas.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DevOps Skills -->
+        <div class="skill-category">
+            <h3>Platform & Tools</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fab fa-docker skill-icon"></i>
+                        <h4>Google Collab</h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="75%"></div>
+                    </div>
+                    <p class="skill-description">
+                        Colab is a hosted Jupyter Notebook service that requires no setup to use and provides free access to computing resources, including GPUs and TPUs.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fab fa-git-alt skill-icon"></i>
+                        <h4>Kaggle</h4>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-progress="90%"></div>
+                    </div>
+                    <p class="skill-description">
+                        Kaggle is the world's largest data science community with powerful tools and resources to help you achieve your data science goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
+
+
 
     <!-- Contact Section -->
     <section id="contact">
@@ -265,13 +896,21 @@
                 <input type="email" placeholder="Your Email" required>
             </div>
             <div class="form-group">
-                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <textarea rows="5" placeholder="How can I help with your data needs?" required></textarea>
             </div>
             <button type="submit">Send Message</button>
         </form>
+
+
     </section>
 
+
+
+
+    </div>
+
     <script>
+        
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -290,6 +929,141 @@
                 document.querySelector('.navbar').style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
+
+
+        <!-- Initialize AOS -->
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+       
+
+
+        // Initialize Tilt.js
+        VanillaTilt.init(document.querySelectorAll('.project-card'), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2
+        });
+
+
+
+        // Animate bars on scroll
+        const animateBars = () => {
+        document.querySelectorAll('.bar').forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            if (bar.getBoundingClientRect().top < window.innerHeight) {
+            bar.style.width = width;
+            }
+        });
+        };
+    
+        window.addEventListener('scroll', animateBars);
+        animateBars(); // Initial check
+
+
+
+        const form = document.querySelector('.contact-form');
+        const inputs = form.querySelectorAll('input, textarea');
+    
+        inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            if (input.checkValidity()) {
+            input.classList.remove('invalid');
+            input.classList.add('valid');
+            } else {
+            input.classList.remove('valid');
+            input.classList.add('invalid');
+            }
+        });
+        });
+    
+        form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Message sent successfully!');
+        form.reset();
+        });
+
+            // Initialize Parallax
+        const scene = document.getElementById('hero');
+        const parallax = new Parallax(scene);
+
+
+        // Parallax Scroll Effect
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.parallax-section');
+            const scrollTop = window.pageYOffset;
+
+            sections.forEach(section => {
+                const speed = 0.5;
+                const offset = scrollTop * speed;
+                section.style.transform = `translateY(${offset}px)`;
+            });
+
+            // Navbar Background Change
+            if (scrollTop > 50) {
+                document.querySelector('.navbar').style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                document.querySelector('.navbar').style.background = 'rgba(0, 0, 0, 0.7)';
+            }
+        });
+
+        // Smooth Scroll (Same as Before)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+
+
+
+
+            // Animate progress bars on scroll
+        const animateProgressBars = () => {
+        const progressBars = document.querySelectorAll('.skill-progress-bar');
+        
+        progressBars.forEach(bar => {
+            const progress = bar.getAttribute('data-progress');
+            const barPosition = bar.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight * 0.8;
+
+            if(barPosition < screenPosition) {
+                bar.style.width = progress;
+            }
+        });
+        };
+
+        window.addEventListener('scroll', animateProgressBars);
+        window.addEventListener('load', animateProgressBars);
+        
+
+
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "jobTitle": "Data Analyst",
+    "skills": ["Python", "SQL", "Tableau"]
+    }
+    </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
