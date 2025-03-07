@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax-js/3.1.0/parallax.min.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 
     
 
@@ -29,6 +29,17 @@
         body {
             line-height: 1.6;
             background-color: #f5f5f5;
+
+
+            /* font change*/ 
+
+            font-family: 'Libre Baskerville', -apple-system, BlinkMacSystemFont, 
+                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+                sans-serif;
+            line-height: 1.6;
+            font-weight: 400;
+            color: #333;
+          
         }
 
         /* Navbar */
@@ -75,7 +86,7 @@
         /* Hero Section */
         #hero {
             text-align: center;
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            background: linear-gradient(45deg, #076585, #ffffff);
             color: white;
         }
 
@@ -87,10 +98,65 @@
         .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
+
+        /* font changes */
+
+            font-family: 'Libre Baskerville', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
 
-    
+              /* ====== Headings ====== */
+              /* Alternative font options */
+                /* Professional Serif 
+                font-family: 'Libre Baskerville', serif; */
+
+                /* Modern Tech 
+                font-family: 'IBM Plex Sans', sans-serif; */
+
+                /* Creative Display 
+                font-family: 'Poppins', sans-serif; */
+
+        /* ====== Headings ====== 
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 200;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+
+        */
+/* 
+        h1 {
+            font-size: 1rem; 
+            margin-bottom: 1.5rem;
+        }
+        */
+        
+/*
+        h2 {
+            font-size: 1rem; 
+            margin-bottom: 1.2rem;
+        }
+
+        */
+
+        /* updated */
+
+        .social-links {
+            display: flex;
+            justify-content: center; /* Horizontal centering */
+            align-items: center;     /* Vertical centering */
+            width: 100%;
+            margin: 6rem auto 3rem;       /* Vertical spacing */
+            gap: 4rem;               /* Space between icons */
+            flex-wrap: wrap;         /* Allow wrapping on mobile */
+        }
+
         .social-links {
             margin-top: 2rem;
             display: flex;
@@ -100,27 +166,51 @@
         .social-links a {
             color: white;
             font-size: 1.8rem;
-            transition: transform 0.3s, color 0.3s;
+            transition: transform 0.3s, color 0.3s ease-in-out;
         }
 
         .social-links a:hover {
             color: #ffd700; /* Gold color on hover */
-            transform: translateY(-3px);
+            transform: scale(1.2) translateY(-3px);
         }
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .social-links {
-                gap: 1rem;
+                gap: 1.5rem;
+                margin: 4rem auto;
+
             }
             .social-links a {
                 font-size: 1.5rem;
             }
         }
+        
+  
+
+        
+        
+        #projects {
+            background: linear-gradient(45deg,  #f5f5f5, #f5f5f5);
+        }
+
+        /*
 
         #projects {
-            background: linear-gradient(45deg, #ffffff, #ffffff);
+    
+            background: 
+                linear-gradient(rgba(255,255,255,0.9), 
+                rgba(255,255,255,0.9)),
+                url('images/image2.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+                
+            transition: background-position 0.3s ease;
         }
+
+        */
 
         .projects-grid {
             display: grid;
@@ -131,13 +221,27 @@
             max-width: 1200px;
         }
 
+   
+
         .project-card {
             background: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+
         }
+
+    /*
+        .project-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+
+        */
+
 
         .project-card {
         transform-style: preserve-3d;
@@ -155,11 +259,16 @@
 
         .project-info {
             padding: 1.5rem;
+        /* font changes */
+
+            font-family: 'Libre Baskerville', sans-serif;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
         }
 
         /* Skills Section */
         #skills {
-            background: linear-gradient(45deg, #ffffff, #ffffff);
+            background: linear-gradient(45deg, #f5f5f5, #f5f5f5);
         }
 
         .skills-container {
@@ -186,9 +295,9 @@
         }
 
         /* Contact Form */
-        /*#contact {
-            background: linear-gradient(45deg, #ffffff, #ffffff);
-        } */
+        #contact {
+            background: linear-gradient(45deg, #f5f5f5, #f5f5f5);
+        }
 
         .contact-form {
             width: 100%;
@@ -284,7 +393,7 @@
 
 
         #timeline {
-            background: linear-gradient(45deg, #ffffff, #ffffff);
+            background: linear-gradient(45deg, #f5f5f5, #f5f5f5);
         }
 
 
@@ -297,7 +406,7 @@
         .timeline::before {
         content: '';
         position: absolute;
-        left: 50%;
+        left: calc(50% - 1px); /* Account for line width */      
         width: 2px;
         height: 100%;
         background: #007bff;
@@ -305,22 +414,42 @@
     
         .timeline-item {
         background: white;
-        padding: 1.5rem;
-        margin: 2rem 0;
-        width: 45%;
+        left: 0%; /* Adjust positioning */
+        padding: 2rem;
+        margin: 2rem 0;  /* Center items vertically */
+        width: 48%;
         position: relative;
         border-radius: 8px;
         box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
     
+        /* Right-aligned items */
         .timeline-item:nth-child(odd) {
-        margin-left: 55%;
+            margin-left: 50%;
+            transform: translateX(30px); /* Add space from timeline */
         }
-    
+
+        /* Left-aligned items */
         .timeline-item:nth-child(even) {
-        margin-left: 0;
+            margin-left: 2%;
+            transform: translateX(-30px); /* Add space from timeline */
         }
-        
+
+
+          /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 90%;
+                left: 5%;
+                margin: 1.5rem auto;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
 
 
         /* Particle container setup */
@@ -415,7 +544,7 @@
 
         .skill-progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #007bff, #00a8ff);
+            background: linear-gradient(90deg, #007bff, #2a88b7);
             width: 0;
             transition: width 1.5s ease-in-out;
             position: relative;
@@ -534,46 +663,52 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
-            <h1>Hi, I'm Your Friend.</h1>
-            <p>Data Analyst</p>
-            <button onclick="location.href='#contact'">Get in Touch</button>
+            <h1>Hi, I'm Akshay.</h1><br>
+            <p>Data Analyst</p><br>
+            <p style="font-size:1vw;"><br>
+                With 2+ years of experience at GlobalLogic India, I specialize in uncovering hidden patterns in complex datasets and translating them into strategic business solutions. My work bridges the gap between technical analysis and real-world impact.</p>
+            <br><br>
+            <button onclick="location.href='#contact'">Get in Touch</button><br>
             
 
         <!-- Add this inside the hero-content div, after the button -->
         <div class="social-links">
-            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/AkshayK04" target="_blank" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/akshay-k-8581b01a4" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter">
+            <a href="https://www.kaggle.com/akshaykumar04" target="_blank" aria-label="Kaggle">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="mailto:youremail@example.com" aria-label="Email">
+            <a href="mailto:akshay04srmuniversity@gmail.com" aria-label="Email">
                 <i class="fas fa-envelope"></i>
             </a>
         
             <!-- Instagram -->
-            <a href="https://instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+            <a href="https://unsplash.com/@imakshay2417" target="_blank" aria-label="Unsplash">
                 <i class="fab fa-instagram"></i>
             </a>
 
             <!-- Medium -->
-            <a href="https://medium.com/@yourhandle" target="_blank" aria-label="Medium">
+            <a href="https://www.hackerrank.com/profile/akshay_k18" target="_blank" aria-label="Hackerrank">
                 <i class="fab fa-medium"></i>
             </a>
 
             <!-- YouTube -->
-            <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube">
+            <a href="https://leetcode.com/u/Akshay_04/" target="_blank" aria-label="Leetcode">
                 <i class="fab fa-youtube"></i>
             </a>
 
             <!-- Stack Overflow -->
-            <a href="https://stackoverflow.com/users/yourid" target="_blank" aria-label="Stack Overflow">
+            <a href="https://codeforces.com/profile/akshay.k18" target="_blank" aria-label="Codeforces">
                 <i class="fab fa-stack-overflow"></i>
             </a>
         </div>
+
+    
+
 
         <!-- Add this inside your hero section -->
         <!--<div class="parallax-layer" data-depth="0.2"></div> -->
@@ -583,24 +718,38 @@
     <section id="timeline">
         <h2>Professional Journey</h2>
         <div class="timeline">
+        <!img src="images/image2.jpg" alt="timeline" class="timeline-image">
+    
           <!-- timeline items here -->
 
 
         <div class="timeline">
-            <div class="timeline-item" data-aos="zoom-in">
+            <div class="timeline-item" data-aos="fade-up-left">
               <h3> March 2024 - Present</h3>
               <p>Analyst @ Globallogic India</p>
+
+                <p>Analyzed and processed large data to improve the quality and accuracy of the Google KG, ensuring that data relationships and structures were properly represented across various domains.</p>
+                <p>Collaborated with cross-functional teams (e.g., engineers, data scientists, and product managers) to implement data-driven strategies for enhancing the Knowledge Graph’s performance and integration with Google Search and other services.</p>
+                <p>Used tools such as SQL, Python, and Google Cloud Platform (GCP) to extract insights, manipulate data, and streamline workflows.</p>
+                <p>Participated in the design and experiments to assess the impact of Knowledge Graph enhancements on search relevance and user experience.</p>
+
+                <p>Key Achievements:</p>
+                <li>Increased the efficiency of content ingestion and validation processes by 80%, reducing manual intervention and accelerating content updates.</li>
+                <li>Successfully developed and launched [tool/feature/initiative], improving the overall relevancy of content within Google Search.</li>
             </div>
             <!-- Add more items -->
     
-        <div class="timeline-item" data-aos="zoom-in">
+        <div class="timeline-item" data-aos="fade-up-right">
                 <h3> Oct 2022 - March 2024</h3>
                 <p>Associate Analyst @ Globallogic India</p>
 
                 <ul class="role-details">
-                    <li>Performed ETL on 1M+ row datasets</li>
-                    <li>Created 15+ Tableau dashboards</li>
-                    <li>Reduced reporting time by 40% through automation</li>
+                    <p>Conducted data validation, cleaning, and transformation tasks to ensure the accuracy and consistency of information across the Knowledge Graph.</p>
+                    <p>Contributed to the development of automated processes to optimize Knowledge Graph updates and maintain data integrity.</p>
+                    <p>Key Achievements:</p>
+                        <li>Successfully identified and corrected 20% of data inconsistencies, significantly improving Knowledge Graph accuracy.</li>
+                        <li>Contributed to a 90% increase in the accuracy of Knowledge Graph results, directly impacting user engagement and satisfaction.</li>
+                        <li>Played a pivotal role in implementing [specific project or initiative], contributing to [measurable outcome].</li>
                   </ul>
 
             </div>
@@ -616,6 +765,8 @@
 
     <!-- Projects Section -->
     <section id="projects" data-aos="fade-up">
+
+
         <h2>My Projects</h2>
         <div class="projects-grid">
 
@@ -628,61 +779,87 @@
                 <!-- Update project card HTML -->
             <div class="project-card" data-tilt data-tilt-scale="1.05">
 
-                <!img src="project1.jpg" alt="Project 1" class="project-image">
+                <img src="images/image3.jpg" alt="Project 1" class="project-image">
                 <div class="project-info">
                     <h3>Detecting Fraud Transactions</h3>
 
-                    <p>Google Collab, Python ,Seaborn, Matplotlib, NumPy, Pandas</p>
-
 
                     <p>A huge dataset of 63,62,620 transactions. This dataset
-                        includes missing values, outliers.Used Python with libraries like
-                        Seaborn, Matplotlib, NumPy , Pandas, Decision Trees for this
+                        includes missing values, outliers.</p>
+            
+                    <p>Used Python with libraries like
+                        Seaborn, Matplotlib, NumPy, Pandas, Decision Trees for this
                         project.</p>
-                    <p>Analyzed global infection patterns using Python and Tableau</p>
+
+                    <p>Analyzed patterns using Python and Tableau.</p>
                         <ul>
-                            <li>Cleaned dataset of 2M+ records</li>
-                            <li>Identified key infection trends</li>
+                            <li>Procesing Dataset of 6M+ records</li>
+                            <li>Identifing trends</li>
                             <li>Created interactive dashboard</li>
-                            <li>Cleaned dataset of 2M+ records</li>
-                            <li>Identified key infection trends</li>
-                            <li>Created interactive dashboard</li>
-                            <li>Cleaned dataset of 2M+ records</li>
                         </ul>
+
+                    <p>Skills Used</p>
+                    <li>Google Collab, Python, Seaborn, Matplotlib, NumPy, Pandas</li>
+
                     
                 </div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-card" data-tilt data-tilt-scale="1.05">
-                <!img src="project2.jpg" alt="Project 2" class="project-image">
+                <img src="images/image2.jpg" alt="Project 2" class="project-image">
                 <div class="project-info">
                     <h3>Image Synthesis</h3>
 
-                    <p>Python ,Opencv, caffe</p>
                     <div class="project-description">
 
                     <p>A project in which we can recognize image and detect gender
                         classication, age detection, emotion detection and output is in
-                        speech. Used Python with libraries like HaarClassier , opencv,
-                        caffe.</p>
+                        speech. </p>
+
+                    <p> Haar cascades are machine learning object detection algorithms. 
+                        They use use Haar features to determine the likelihood of a certain point being part of an object.
+                        Use OpenCV for implementing a Haar cascade model yourself.</p>
+                    </p>Used Python with libraries like HaarClassifier, OpenCV,
+                        Caffe for this project.</p>
+
+                    <p>Skills Used</p>
+
+                    <li>Python ,OpenCV, Caffe, Haar Casades, Dataset</li>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- Project 3 -->
             <div class="project-card" data-tilt data-tilt-scale="1.05">
-                <!img src="project3.jpg" alt="Project 3" class="project-image">
+
+                <img src="images/image1.jpg" alt="Project 3" class="project-image">
                 <div class="project-info">
                     <h3> Credit Card Fraud Detection</h3>                
 
-                    <p>Python, Seaborn, Matplotlib, NumPy, Pandas, Scikit Learn</p>
 
                     <div class="project-description">
                         <p>A Beginner project for Data Science to understand the method
-                        and concepts.Used Python with libraries like Seaborn
-                        ,Matplotlib ,Numpy ,Pandas ,Scikit-Learn & algorithms like
-                        Random Forest Method , Credit Card Dataset for this project.</p>
+                        and concepts.</p>
+
+                        <p> The dataset contains transactions made by credit cards in September 2013 by European cardholders. Contains records of 2,84,807 transactions.</p>
+
+                        <p>Used Python with libraries like Seaborn, Matplotlib, Numpy, Pandas, Scikit-Learn & algorithms like
+                            Random Forest Method, Decision trees, Credit Card Dataset for this project.</p>
+
+                        <li>Processing dataset of 0.28M+ records</li>
+                        <li>90% Accuracy. </li>
+
+                        <p>Skills Used</p>
+
+                        <li>Python, Seaborn, Matplotlib, NumPy, Pandas, Scikit Learn</li>
+
+
+                       
+
+
                 </div>
                 </div>
             </div>
@@ -693,7 +870,7 @@
                   <span class="metric-label">Accuracy</span>
                 </div>
                 <div class="metric-item">
-                  <span class="metric-value">2M+</span>
+                  <span class="metric-value">6M+</span>
                   <span class="metric-label">Records Processed</span>
                 </div>
               </div>
@@ -1060,6 +1237,9 @@
 
 </body>
 </html>
+
+
+
 
 
 
